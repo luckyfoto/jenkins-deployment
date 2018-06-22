@@ -1,9 +1,9 @@
 node('master') {
     
 	stage('Checkout') {
-        steps {
-            echo "Check out gitlab"
-            checkout([
+		steps {
+			echo "Check out gitlab"
+			checkout([
 				$class: 'GitSCM', 
 				branches: [[name: '*/master']], 
 				doGenerateSubmoduleConfigurations: false, 
@@ -11,7 +11,7 @@ node('master') {
 				submoduleCfg: [], 
 				userRemoteConfigs: [[
 					credentialsId: '0acb57ef-daed-48ea-8ca4-0b82cce3cd32', 
-					url: 'https://github.com/luckyfoto/demo-test-build-docker'
+					url: 'https://github.com/luckyfoto/demo-test-build-docker.git'
 				]]
 			])
         }
